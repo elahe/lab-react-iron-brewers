@@ -24,7 +24,7 @@ function AddBeerPage() {
   const handleContributedBy = (e) => setContributedBy(e.target.value);
 
 
-  const navigate = useNavigate
+  const navigate = useNavigate()
   // TASK:
   // 1. Create a function to handle the form submission and send the form data to the Beers API to create a new beer.
   // 2. Use axios to make a POST request to the Beers API.
@@ -36,11 +36,11 @@ function AddBeerPage() {
       name,
       tagline,
       description,
-      imageUrl,
-      firstBrewed,
-      brewersTips,
-      attenuationLevel,
-      contributedBy,
+      image_url: imageUrl,
+      first_brewed: firstBrewed,
+      brewers_tips: brewersTips,
+      attenuation_level: Number(attenuationLevel),
+      contributed_by: contributedBy,
     }
     console.log(body)
     axios.post(`${import.meta.env.VITE_SERVER_URL}/beers/new`,body)
